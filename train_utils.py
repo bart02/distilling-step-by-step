@@ -62,7 +62,7 @@ def train_and_evaluate(args, run, tokenizer, tokenized_datasets, compute_metrics
         logging_dir=logging_dir,
         logging_strategy=logging_strategy,
         logging_steps=args.eval_steps,
-        max_steps=args.max_steps,
+        num_train_epochs=args.num_train_epochs,
         learning_rate=args.lr,
         gradient_accumulation_steps=args.grad_steps,
         per_device_train_batch_size=args.batch_size,

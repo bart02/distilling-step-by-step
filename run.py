@@ -208,7 +208,7 @@ if __name__ == '__main__':
     parser.add_argument('--dataset', type=str, required=True)
     parser.add_argument('--subsample', type=float, default=1.0)
     parser.add_argument('--alpha', type=float, default=0.5)
-    parser.add_argument('--max_steps', type=int, default=10000)
+    parser.add_argument('--num_train_epochs', type=int, default=3)
     parser.add_argument('--eval_steps', type=int, default=250)
     parser.add_argument('--batch_size', type=int, default=64)
     parser.add_argument('--optimizer_name', type=str, default='AdamW')
