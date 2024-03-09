@@ -57,13 +57,15 @@ def train_and_evaluate(args, run, tokenizer, tokenized_datasets, compute_metrics
         remove_unused_columns = False,
         evaluation_strategy = 'steps',
         eval_steps=args.eval_steps,
-        save_strategy='no',
         save_steps=args.eval_steps,
+        save_total_limit=3,
         logging_dir=logging_dir,
         logging_strategy=logging_strategy,
         logging_steps=args.eval_steps,
         num_train_epochs=args.num_train_epochs,
         learning_rate=args.lr,
+        load_best_model_at_end=True,
+        metric_for_best_model="test_accuracy",
         gradient_accumulation_steps=args.grad_steps,
         per_device_train_batch_size=args.batch_size,
         per_device_eval_batch_size=args.batch_size,
@@ -109,3 +111,4 @@ def train_and_evaluate(args, run, tokenizer, tokenized_datasets, compute_metrics
     
 
     trainer.train()
+    print("FINAL", trainer.evaluate(tokenized_datasets["valid"], metric_key_prefix="test"))
