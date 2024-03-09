@@ -11,6 +11,11 @@ conda install -y pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatool
 pip install git+https://github.com/huggingface/transformers@v4.24.0 datasets sentencepiece protobuf==3.20.* tensorboardX
 ```
 
+```
+wget https://github.com/google-research/distilling-step-by-step/raw/main/datasets.zip
+unzip datasets.zip
+```
+
 ## Command Usages
 #### Args usages
 - `--from_pretrained`: `google/t5-v1_1-small`, `google/t5-v1_1-base`, `google/t5-v1_1-large`, `google/t5-v1_1-xxl`
