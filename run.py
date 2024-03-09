@@ -21,6 +21,9 @@ from transformers import AutoTokenizer
 from data_utils import CQADatasetLoader, SVAMPDatasetLoader, ESNLIDatasetLoader, ANLI1DatasetLoader, ASDivDatasetLoader
 from metrics import compute_text_acc, compute_equation_acc, compute_metrics_text, compute_metrics_equation, compute_metrics_text_aux, compute_metrics_equation_aux
 from train_utils import train_and_evaluate
+import transformers
+
+transformers.logging.set_verbosity_info()
 
 
 def run(args):
