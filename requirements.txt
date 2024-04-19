@@ -1,3 +1,6 @@
 datasets
 sentencepiece
 transformers
+evaluate
+scikit-learn
+accelerate
