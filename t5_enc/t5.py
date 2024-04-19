@@ -391,5 +391,5 @@ class MyTrainer(Trainer):
 
     def compute_loss(self, model, inputs, return_outputs=False):
         outputs: Seq2SeqLMAndSequenceClassificationOutput = model(**inputs)
-        loss = self.alpha * outputs.clf_loss + (1. - self.alpha) * outputs.loss
+        loss = self.alpha * outputs.clf_loss + (1. - self.alpha) * outputs.loss if self.alpha != 1.0 else outputs.clf_loss
         return (loss, outputs) if return_outputs else loss
