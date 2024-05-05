@@ -1,3 +1,6 @@
+results/
+tokenized_datasets/
+
 dataset*.zip
 dataset*/
 
